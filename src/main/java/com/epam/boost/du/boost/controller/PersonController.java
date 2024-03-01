@@ -41,7 +41,7 @@ public class PersonController
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<PersonDTO> updateWarehouse(@PathVariable String id,
+	public ResponseEntity<PersonDTO> updatePerson(@PathVariable String id,
 			@RequestBody PersonDTO request)
 	{
 		final var person = personService.updatePerson(request);
@@ -59,9 +59,9 @@ public class PersonController
 		return personService.createPerson(request.getFirstName(), request.getLastName());
 	}
 
-	@DeleteMapping("/{warehouseId}")
+	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void deleteWarehouse(@PathVariable String id)
+	public void deletePerson(@PathVariable String id)
 	{
 		personService.removeUser(id);
 	}
