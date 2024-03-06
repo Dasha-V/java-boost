@@ -50,7 +50,7 @@ public class PersonCountServiceImpl implements PersonCountService
 				.collect(Collectors.toList());
 
 		var max = Collections.max(source);
-		var min = Integer.valueOf(NumberUtils.INTEGER_ONE);
+		var min = NumberUtils.INTEGER_ONE;
 
 		var target = IntStream.range(min, max + NumberUtils.INTEGER_ONE).boxed().collect(Collectors.toList());
 		target.removeAll(source);
